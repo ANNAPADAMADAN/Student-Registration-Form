@@ -2,6 +2,18 @@
 <HEAD><TITLE>Student Registration Form</title>
 <link rel="stylesheet"href="styles1.css">
 <body style="background-image:url('background1.jpg');">
+         <script>
+        function savedata(){
+            let username = 
+            document.getElementById("mail").value;
+            let password =
+            document.getElementById("password").value;
+            localStorage.setItem("mail",username);
+            localStorage.setItem("password",password);
+            alert(localStorage.getItem("mail"));
+            alert(localStorage.getItem("password"));
+        }
+    </script>
 <h1><b><center>Student Registration Form</center></b></h1>
 <h5><center>Fill out the form to apply for the training courses.<br> You can consider your application accepted after you receive a confirmation email.</center></h5><hr>
 <marquee bgcolor="lightgreen"
@@ -19,7 +31,7 @@ street adress <textarea></textarea> <br>
 city &nbsp&nbsp&nbsp&nbsp &nbsp  <textarea></textarea>  &nbsp &nbsp &nbsp  &nbsp  state/province <textarea></textarea><br>
 country&nbsp <textarea></textarea>  &nbsp &nbsp&nbsp&nbsp   &nbsp ZIP code &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<textarea></textarea>
 <h2>Contact Information</h2>
-E-mail <input type = "email"> &nbsp&nbsp&nbsp&nbsp Contact No.<input type = "number">
+E-mail <input type = "email" id="mail"> &nbsp&nbsp&nbsp&nbsp Contact No.<input type = "number"> &nbsp&nbsp&nbsp&nbsp Password <input type ="password" id="password">
 <h2>Courses</h2>
 <SELECT NAME="Course Name" ID="Course Name">
 <OPTION VALUE="Course Name">Course Name</OPTION>
@@ -42,7 +54,7 @@ E-mail <input type = "email"> &nbsp&nbsp&nbsp&nbsp Contact No.<input type = "num
 </SELECT>
 <h2>Comments</h2>
 <textarea> </textarea><br><br>
-<button>SUBMIT</button>
+<button onclick="savedata()">SUBMIT</button>
 <button>CLEAR</button><BR><BR>
 <img src="logo.jpg"width=80 alt="RCSS"> <br> Rajagiri Rd,<br> South Kalamassery, <br>Kalamassery, Kochi,<br> Kerala 683104<br>
 Phone: 0484 242 6554
